@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+leads = Lead.create([
+    {address: '123 Fake St.', phone: '1112223333', email: 'fake@email.com', latitude: '123456', longitude: '654321'}
+  ])
