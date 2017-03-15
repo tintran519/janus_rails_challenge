@@ -11,7 +11,9 @@
 <ul>
   <% @response.businesses.each do |res| %>
     <li>
-      <%= res.name %>
+      <%= res.name %> - <%= res.location.address[0] %>
+      <%= button_to "Add to leads", leads_path(name: res.name, address: res.location.address[0],
+        phone: res.phone, latitude: res.location.coordinate.latitude, longitude: res.location.coordinate.longitude), method: :post %>
     </li>
   <% end %>
 </ul>

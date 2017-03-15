@@ -1,2 +1,32 @@
 <h1>All the Leads</h1>
-
+<table>
+  <tbody>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td>
+          <%= lead.name %>
+        </td>
+        <td>
+          <%= lead.address %>
+        </td>
+        <td>
+          <%= lead.phone %>
+        </td>
+        <td>
+          <%= lead.latitude %>
+        </td>
+        <td>
+          <%= lead.longitude %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="link">
+  <%= link_to "Search for more leads!", search_path %>
+</div>

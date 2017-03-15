@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170315042208) do
   enable_extension "plpgsql"
 
   create_table "leads", force: :cascade do |t|
+    t.string   "name"
     t.string   "address"
     t.string   "phone"
-    t.string   "email"
     t.string   "latitude"
     t.string   "longitude"
     t.datetime "created_at", null: false
