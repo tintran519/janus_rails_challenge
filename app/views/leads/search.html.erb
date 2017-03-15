@@ -1,0 +1,20 @@
+<h1>Search Businesses</h1>
+<div class="form_wrapper">
+  <%= form_tag("/search", method: "get") do %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+<% if !@response %>
+  Enter a location!
+<% else %>
+<ul>
+  <% @response.businesses.each do |res| %>
+    <li>
+      <%= res.name %> - <%= res.location.address[0] %>
+      <%= button_to "Add to leads", leads_path(name: res.name, address: res.location.address[0],
+        phone: res.phone, latitude: res.location.coordinate.latitude, longitude: res.location.coordinate.longitude), method: :post %>
+    </li>
+  <% end %>
+</ul>
+<% end %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get "leads", to: "leads#index"
+  get "search", to: "leads#search"
+  post "leads", to: "leads#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

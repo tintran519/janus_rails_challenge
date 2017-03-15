@@ -1,9 +1,9 @@
 class CreateLeads < ActiveRecord::Migration
   def change
     create_table :leads do |t|
+      t.string :name
       t.string :address
       t.string :phone
-      t.string :email
       t.string :latitude
       t.string :longitude
 
