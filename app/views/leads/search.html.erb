@@ -1,0 +1,18 @@
+<h1>Search Businesses</h1>
+<div class="form_wrapper">
+  <%= form_tag("/search", method: "get") do %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+<% if !@response %>
+  Enter a location!
+<% else %>
+<ul>
+  <% @response.businesses.each do |res| %>
+    <li>
+      <%= res.name %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
